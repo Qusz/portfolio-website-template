@@ -1,6 +1,6 @@
 export default {
   checkScreenSize: function() {
-    if (window.innerWidth <= 1366) {
+    if (window.innerWidth <= 1024) {
       return true;
     }
 

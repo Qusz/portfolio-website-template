@@ -209,7 +209,7 @@
     }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1024px) {
   .hero {
     text-align: center;
 
@@ -233,7 +233,7 @@
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1366px) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
   .hero {
     &__title {
       font-size: $fs-xl;
@@ -261,7 +261,7 @@
 //* Mobile
 //* =================
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1024px) {
   .wrapper {
     gap: $spacer-l;
   }

@@ -84,7 +84,7 @@ export default {
       this.mobile = helpers.checkScreenSize();
 
       // So that mobile nav is closed properly on manual window resize
-      if (window.innerWidth >= 1366 && this.mobileNav) {
+      if (window.innerWidth >= 1024 && this.mobileNav) {
         this.toggleMobileNav();
       }
     });
