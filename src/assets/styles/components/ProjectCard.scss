@@ -22,12 +22,15 @@
 
     &__cover {
       position: absolute;
-      top: 30px;
       opacity: 0;
       transition: all .5s ease;
 
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      gap: $spacer-xs;
+
+      height: 100%;
       
       padding: 0 $spacer-xs;
 
@@ -57,7 +60,10 @@
         }
     }
 
-    &__image {
+    &__image {      
+      height: 230px;
+      object-fit: cover;
+      
       transition: all .5s ease;
 
         &.is-active {
@@ -85,7 +91,7 @@
 
       &.is-active {
         color: $clr-accent;
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
   }
 
