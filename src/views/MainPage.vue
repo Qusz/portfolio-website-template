@@ -68,7 +68,7 @@
           </div>
           <div class="about__content-pic">
             <img
-              src="@/assets/img/portrait.jpg"
+              src="/portrait.jpg"
               alt="author's image"
             >
           </div>
