@@ -1,0 +1,23 @@
+@use '../base/' as *;
+
+.footer {
+  padding: $spacer-xs 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+//* =================
+//* Typography
+//* =================
+
+.footer {
+  &__copyright {
+    color: $clr-accent;
+    font-family: $ff-mada;
+    font-weight: 200;
+    font-size: $fs-xs;  
+  }
+}

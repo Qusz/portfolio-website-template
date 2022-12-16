@@ -1,0 +1,122 @@
+@use '../base/' as *;
+
+.card {
+  border: 2px solid $clr-accent;
+  border-radius: 5px;
+
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+  background-color: $clr-secondary;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    &__project-name {
+      padding: $spacer-xxs 0;
+    }
+
+    &__cover {
+      position: absolute;
+      top: 30px;
+      opacity: 0;
+      transition: all .5s ease;
+
+      display: flex;
+      flex-direction: column;
+      
+      padding: 0 $spacer-xs;
+
+
+        &.is-active {
+          opacity: 1;
+        }
+
+        &-links {
+          display: flex;
+          justify-content: center;
+          gap: $spacer-m;
+          margin-top: $spacer-xs;
+        }
+
+        &-link {
+          padding: $spacer-xxs $spacer-xs;
+          border: 2px solid $clr-accent;
+          border-radius: 5px;
+          min-width: 80px;
+
+          transition: all .2s ease;
+
+            &:hover {
+              background-color: rgba(0, 171, 179, .1);
+            }
+        }
+    }
+
+    &__image {
+      transition: all .5s ease;
+
+        &.is-active {
+          opacity: .08;
+          transform: scale(1.5);
+        }
+    }
+}
+
+
+
+//* =================
+//* Typograhpy
+//* =================
+
+.card {
+  &__project-name {
+    font-family: $ff-redhat;
+    font-weight: 500;
+    font-size: $fs-s;
+    color: $clr-light;
+    text-align: center;
+
+    transition: all .2s ease;
+
+      &.is-active {
+        color: $clr-accent;
+        transform: scale(1.1);
+      }
+  }
+
+  &__cover {
+    font-family: $ff-mada;
+    font-weight: 400;
+    font-size: $fs-s;
+    color: $clr-light;
+    line-height: 1.5;
+    text-align: center;
+
+      &-link {
+        @include link-button-xs;
+      }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    &__cover {
+      font-size: $fs-xs;
+
+        &-link {
+          font-size: $fs-xs;
+        }
+    }
+
+    &__project-name {
+      &.is-active {
+        transform: scale(1);
+      }
+    }
+  }
+}

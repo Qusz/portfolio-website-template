@@ -1,0 +1,309 @@
+@use '../base/' as * ;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer-xxl;
+}
+
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+
+    &__wrapper {
+      max-width: 900px;
+
+      display: flex;
+      flex-direction: column;
+      gap: $spacer-m;
+
+      padding-top: $spacer-xl;
+    }
+
+    &__button {
+      @include link-button-m;
+
+        &-wrapper {
+          margin-top: $spacer-s;
+        }
+    }
+}
+
+.about {
+  &__content {
+    margin-top: $spacer-m;
+
+    display: flex;
+    justify-content: space-around;
+    gap: $spacer-m;
+
+      &-text {
+        max-width: 720px;
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        gap: $spacer-s;
+      }
+
+      &-pic {
+        max-width: 400px;
+      }
+  }
+
+  &__tech {
+    &-wrapper {
+      margin-top: $spacer-s;
+      padding-left: $spacer-m;
+
+      display: flex;
+      gap: $spacer-m;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: $spacer-xs;
+      
+      list-style: url('/src/assets/icons/chevron-right.png');
+    }
+  }
+}
+
+.projects {
+  &__wrapper {
+    margin-top: $spacer-m;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacer-s
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $spacer-xs;
+  }
+
+  &__cards {
+    display: grid;
+    place-content: center;
+    grid-gap: $spacer-xs;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 400px));
+
+      &-wrapper {
+        align-self: center;
+        max-width: 1300px;
+      }
+  }
+}
+
+.contact {
+  &__wrapper {
+    padding-block: $spacer-xl;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacer-l;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $spacer-xs;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacer-s;
+
+    align-self: center;
+
+    max-width: 800px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: $spacer-xs;
+  } 
+
+  &__link {
+    @include link-button-s;
+    align-self: center;
+
+      .github-logo {
+        width: 18px;
+      }
+  }
+}
+
+
+
+//* =================
+//* Typography
+//* =================
+
+.hero {
+  color: $clr-light;
+
+    &__title {      
+      font-family: $ff-redhat;
+      font-weight: 600;
+      font-size: $fs-xxl;
+
+        span {
+          color: $clr-secondary--light;
+        }
+    }
+
+    &__subtitle {
+      font-family: $ff-redhat;
+      font-weight: 500;
+      font-size: $fs-xl;
+
+      color: $clr-light--shade;
+    }
+
+    &__content {
+      font-family: $ff-mada;
+      font-weight: 300;
+      font-size: $fs-m;
+      line-height: 1.8;
+    }
+}
+
+.about {
+  color: $clr-light;
+
+    &__content {
+      line-height: 1.7;
+      font-family: $ff-mada;
+      font-weight: 300;
+      font-size: $fs-m;
+    }
+
+    &__tech {
+      font-family: $ff-mada;
+      font-weight: 400;
+      font-size: $fs-s;
+
+        &-title {
+          font-family: $ff-redhat;
+          font-weight: 500;
+          font-size: $fs-m;
+        }
+    }
+}
+
+.contact {
+  color: $clr-light;
+
+    &__title {
+      font-family: $ff-mada;
+      font-weight: 600;
+      font-size: $fs-l;
+      text-align: center;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+  .hero {
+    text-align: center;
+
+      &__title {
+        font-size: $fs-l;
+      }
+
+      &__subtitle {
+        font-size: $fs-m;
+      }
+
+      &__content {
+        font-size: $fs-s;
+      }
+  }
+
+  .about {
+    &__content {
+      font-size: $fs-s;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1366px) {
+  .hero {
+    &__title {
+      font-size: $fs-xl;
+    }
+
+    &__subtitle {
+      font-size: $fs-l;
+    }
+
+    &__content {
+      font-size: $fs-m;
+    }
+  }
+
+  .about {
+    &__content {
+      font-size: $fs-m;
+    }
+  }
+}
+
+
+
+//* =================
+//* Mobile
+//* =================
+
+@media screen and (max-width: 1366px) {
+  .wrapper {
+    gap: $spacer-l;
+  }
+
+  .hero {
+    height: 100vh;
+
+      &__wrapper {
+        align-self: center;
+      }
+
+      &__header {
+        display: flex;
+        flex-direction: column;
+        gap: $spacer-xs;
+      }
+
+      &__button {
+        align-self: center;
+      }
+  }
+  
+  .about {
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      gap: $spacer-s;
+  
+        &-pic {
+          order: -1;
+        }
+
+        &-text {
+          width: 100%;
+          max-width: 700px;
+        }
+    }
+  
+    &__tech {
+      &-wrapper {
+        padding-left: $spacer-s;
+      }
+    }
+  }
+}

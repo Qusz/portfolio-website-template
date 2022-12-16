@@ -1,0 +1,20 @@
+@use '../base/' as *;
+
+.splitter {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer-xxs;
+
+    &__hr {
+      border: 1px solid $clr-secondary;
+      width: 100%;
+      opacity: .7;
+    }
+
+    &__tag {
+      font-family: $ff-mada;
+      font-weight: 300;
+      font-size: $fs-s;
+      color: $clr-accent;
+    }
+}
