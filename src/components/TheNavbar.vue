@@ -9,16 +9,13 @@
     <nav
       class="navbar"
     >
-      <div 
+      <div
+        :class="{ 'is-active': this.mobileNav }" 
         class="navbar__hamburger"
         v-show="mobile"
         @click="toggleMobileNav"
       >
-        <font-awesome-icon 
-          icon="fa-solid fa-bars" 
-          class="icon"
-          :class="{ 'icon-active': mobileNav }"
-        />
+        <img src="/menu-icon.svg" alt="menu icon">
       </div>
       <ul 
         class="navbar__items"
@@ -60,15 +57,9 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import helpers from '@/helpers/helpers.js';
 
-library.add(faBars);
-
 export default {
-  components: { FontAwesomeIcon },
   data() {
     return {
       mobile: null,

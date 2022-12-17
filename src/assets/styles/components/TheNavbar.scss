@@ -76,21 +76,24 @@
       font-size: 2.5rem;
       cursor: pointer;
 
-        &:hover {
-          color: $clr-accent;
-        }
+      -webkit-tap-highlight-color: transparent;
 
-        &:active {
-          color: $clr-light;
-        }
+      transition: all .3s ease;
 
-        .icon {
-          transition: all .3s ease;
-        }
-
-        .icon-active {
+        &.is-active {
           transform: rotate(180deg);
           color: $clr-accent;
+
+            img {
+              filter: invert(100%) sepia(42%) saturate(2726%) hue-rotate(174deg) brightness(102%) contrast(104%);
+
+
+            }
+        }
+
+        img {
+          width: 36px;
+          filter: invert(86%) sepia(9%) saturate(1829%) hue-rotate(149deg) brightness(97%) contrast(92%);
         }
     }
 }
