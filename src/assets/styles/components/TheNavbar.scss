@@ -34,6 +34,7 @@
 
     &__item {
       transition: all .3s ease;
+      -webkit-tap-highlight-color: transparent;
 
         &:hover {
           color: $clr-accent;
@@ -184,6 +185,12 @@
     &__item {
       &:first-child {
         margin-top: $spacer-xl;
+      }
+
+      &.navbar-hover {
+        &::after {
+          display: none;
+        }
       }
     }
   }
