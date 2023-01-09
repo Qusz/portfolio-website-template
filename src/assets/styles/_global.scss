@@ -34,6 +34,31 @@ body {
   padding-top: 100px;
 }
 
+//* =================
+//* Scrollbar
+//* =================
+
+//* Scrollbar Firefox
+
+* {
+  scrollbar-width: thin;         
+  scrollbar-color: $clr-accent $clr-primary;   
+}
+
+//* Scrollbar Webkit
+
+body::-webkit-scrollbar {
+  width: .4rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: $clr-primary;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $clr-accent;
+}
+
 //*================
 //* Mobile
 //*================
