@@ -22,34 +22,13 @@
         :class="{ 'is-active': this.mobileNav }"
         @click="this.closeMobileNav($event)"
       >
-        <li class="navbar__item navbar-hover">
-          <a 
-          class="nav-link"
-          href="#introduction">Introduction</a>
-        </li>
-        <li class="navbar__item navbar-hover">
-          <a 
-          class="nav-link"
-          href="#about">About me</a>
-        </li>
-        <li class="navbar__item navbar-hover">
-          <a 
-          class="nav-link"
-          href="#projects">Projects</a>
-        </li>
-        <li class="navbar__item navbar-hover">
-          <a 
-          class="nav-link"
-          href="#contact">Contact</a>
-        </li>
-        <li class="navbar__item">
-          <a 
-            class="nav-link"
-            href="https://google.com"
-            target="_blank"
-          >
-          Resume
-        </a>
+        <li 
+          v-for="item in navItems" :key="item.id"
+          class="navbar__item navbar-hover" 
+        >
+          <a class="nav-link" :href="item.href" :target="item.target">
+            {{ item.text }}
+          </a>
         </li>
       </ul>
     </nav>
@@ -66,7 +45,14 @@ export default {
       mobileNav: null,
       lastScrollPosition: 0,
       scrollUp: null,
-      scrollDown: null
+      scrollDown: null,
+      navItems: [
+        { id: 1, text: 'Introduction', href: '#introduction', target: "_self" },
+        { id: 2, text: 'About me', href: '#about', target: "_self" },
+        { id: 3, text: 'Projects', href: '#projects', target: "_self" },
+        { id: 4, text: 'Contact', href: '#contact', target: "_self" },
+        { id: 5, text: 'Resume', href: 'https://google.com', target: "_blank" }
+      ]
     }
   },
   created() {
