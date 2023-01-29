@@ -90,7 +90,7 @@ export default {
           this.scrollDown = false;
           break;
         default:
-          throw new Error('Cannot get the screen size');
+          break;
       }
 
       this.lastScrollPosition = currentScroll;
