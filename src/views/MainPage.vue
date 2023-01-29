@@ -115,7 +115,7 @@ import ProjectCard from '@/components/ProjectCard.vue';
 import ContentSplitter from '@/components/ContentSplitter.vue';
 import data from '@/data/data';
 
-import { mainPageAnimations } from '@/helpers/animations';
+import mainPageAnimations from '@/helpers/animations';
 import helpers from '@/helpers/helpers';
 
 export default {
