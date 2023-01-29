@@ -32,6 +32,7 @@
     "eslint-plugin-vue": "^9.9.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
     "prettier": "^2.8.3",
     "vue-eslint-parser": "^9.1.0"
   }

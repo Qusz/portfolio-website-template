@@ -8,5 +8,5 @@
 </template>
 
 <style scoped lang="scss">
-  @use '@/assets/styles/components/Splitter.scss';
-</style> 
+@use '@/assets/styles/components/Splitter.scss';
+</style>
