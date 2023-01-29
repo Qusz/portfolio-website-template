@@ -21,7 +21,7 @@
     </section>
 
     <section id="about" class="about container">
-      <splitter>about_</splitter>
+      <ContentSplitter>about_</ContentSplitter>
       <div class="about__wrapper">
         <article class="about__content">
           <div class="about__content-text">
@@ -61,7 +61,7 @@
     </section>
 
     <section id="projects" class="projects container">
-      <splitter>projects_</splitter>
+      <ContentSplitter>projects_</ContentSplitter>
       <div class="projects__wrapper">
         <div class="project__cards-wrapper">
           <article class="projects__cards">
@@ -83,7 +83,7 @@
     </section>
 
     <section id="contact" class="contact container">
-      <splitter>contact_</splitter>
+      <ContentSplitter>contact_</ContentSplitter>
       <div class="contact__wrapper">
         <article class="contact__content">
           <h2 class="contact__title">Feel free to reach out!</h2>
@@ -112,7 +112,7 @@
 
 <script>
 import ProjectCard from '@/components/ProjectCard.vue';
-import Splitter from '@/components/Splitter.vue';
+import ContentSplitter from '@/components/ContentSplitter.vue';
 import data from '@/data/data';
 
 import { mainPageAnimations } from '@/helpers/animations';
@@ -120,7 +120,7 @@ import helpers from '@/helpers/helpers';
 
 export default {
   name: 'MainPage',
-  components: { ProjectCard, Splitter },
+  components: { ProjectCard, ContentSplitter },
   data() {
     return {
       projectCards: data.projectCards
