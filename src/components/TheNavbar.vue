@@ -1,30 +1,29 @@
 <template>
-  <header 
-    :class="{ 
+  <header
+    :class="{
       'scroll-up': scrollUp,
-      'scroll-down': scrollDown 
-    }" 
+      'scroll-down': scrollDown
+    }"
     class="header container-fluid"
   >
-    <nav
-      class="navbar"
-    >
+    <nav class="navbar">
       <div
-        :class="{ 'is-active': this.mobileNav }" 
-        class="navbar__hamburger"
         v-show="mobile"
+        :class="{ 'is-active': mobileNav }"
+        class="navbar__hamburger"
         @click="toggleMobileNav"
       >
-        <img src="/menu-icon.svg" alt="menu icon">
+        <img src="/menu-icon.svg" alt="menu icon" />
       </div>
-      <ul 
+      <ul
         class="navbar__items"
-        :class="{ 'is-active': this.mobileNav }"
-        @click="this.closeMobileNav($event)"
+        :class="{ 'is-active': mobileNav }"
+        @click="closeMobileNav($event)"
       >
-        <li 
-          v-for="item in navItems" :key="item.id"
-          class="navbar__item navbar-hover" 
+        <li
+          v-for="item in navItems"
+          :key="item.id"
+          class="navbar__item navbar-hover"
         >
           <a class="nav-link" :href="item.href" :target="item.target">
             {{ item.text }}
@@ -36,7 +35,7 @@
 </template>
 
 <script>
-import helpers from '@/helpers/helpers.js';
+import helpers from '@/helpers/helpers';
 
 export default {
   data() {
@@ -47,13 +46,13 @@ export default {
       scrollUp: null,
       scrollDown: null,
       navItems: [
-        { id: 1, text: 'Introduction', href: '#introduction', target: "_self" },
-        { id: 2, text: 'About me', href: '#about', target: "_self" },
-        { id: 3, text: 'Projects', href: '#projects', target: "_self" },
-        { id: 4, text: 'Contact', href: '#contact', target: "_self" },
-        { id: 5, text: 'Resume', href: 'https://google.com', target: "_blank" }
+        { id: 1, text: 'Introduction', href: '#introduction', target: '_self' },
+        { id: 2, text: 'About me', href: '#about', target: '_self' },
+        { id: 3, text: 'Projects', href: '#projects', target: '_self' },
+        { id: 4, text: 'Contact', href: '#contact', target: '_self' },
+        { id: 5, text: 'Resume', href: 'https://google.com', target: '_blank' }
       ]
-    }
+    };
   },
   created() {
     this.mobile = helpers.checkScreenSize();
@@ -71,14 +70,18 @@ export default {
   },
   methods: {
     scrollDirection() {
-      let currentScroll = window.scrollY;
+      const currentScroll = window.scrollY;
 
-      switch(true) {
-        case currentScroll > this.lastScrollPosition && !this.scrollDown && !this.mobile:
+      switch (true) {
+        case currentScroll > this.lastScrollPosition &&
+          !this.scrollDown &&
+          !this.mobile:
           this.scrollDown = true;
           this.scrollUp = false;
           break;
-        case currentScroll < this.lastScrollPosition && this.scrollDown && !this.mobile:
+        case currentScroll < this.lastScrollPosition &&
+          this.scrollDown &&
+          !this.mobile:
           this.scrollDown = false;
           this.scrollUp = true;
           break;
@@ -108,9 +111,9 @@ export default {
       }
     }
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
-  @use '@/assets/styles/components/TheNavbar.scss' as *;
+@use '@/assets/styles/components/TheNavbar.scss' as *;
 </style>
